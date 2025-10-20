@@ -20,16 +20,31 @@ for(let i = 0; i < 100; i++){
   //  
 //}
 
-function bubbleSort(tablica){
-    for (let i = 0; i < tablica.length - 1; i++){
-        for (let j = 0; j < tablica.length - i - 1; j++){
-            if (tablica[j] > tablica[j + 1]) {
-                let temp = tablica[j];
-                tablica[j] = tablica[j + 1];
-                tablica[j + 1] = temp;
-            }
-        }
-    }
+// function bubbleSort(tablica){
+//     for (let i = 0; i < tablica.length - 1; i++){
+//         for (let j = 0; j < tablica.length - i - 1; j++){
+//             //if (tablica[j] > tablica[j + 1]) {
+//                 //let temp = tablica[j];
+//                 //tablica[j] = tablica[j + 1];
+//                 //tablica[j + 1] = temp;
+//             //}
+//         //}
+//     //}
+// //}
+
+function compare(a, b) {
+    if (a < b) {
+        return -1;
 }
-bubbleSort(tablica);
-console.log(tablica);
+if (a > b) {
+    return 1;
+}
+return 0;
+}
+
+function compare2(a, b){
+  return a < b ? -1 : a > b ? 1 : 0;
+}
+function compare3(a, b){
+  return a - b;
+}
