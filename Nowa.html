@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Losowa liczba</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;      /* układ pionowy */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    #liczba {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    #przycisk {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #przycisk:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="liczba">--</div>
+  <button id="przycisk">Wylosuj liczbę</button>
+
+  <script>
+    const liczbaEl = document.getElementById("liczba");
+    const przyciskEl = document.getElementById("przycisk");
+
+    // Funkcja losująca liczbę i wstawiająca ją do elementu
+    function wylosujLiczbe() {
+      const losowa = Math.floor(Math.random() * 100) + 1;
+      liczbaEl.textContent = losowa;
+    }
+
+    // Obsługa kliknięcia przycisku
+    przyciskEl.addEventListener("click", wylosujLiczbe);
+
+    // Wylosuj liczbę od razu przy załadowaniu strony
+    wylosujLiczbe();
+  </script>
+
+</body>
+</html>
